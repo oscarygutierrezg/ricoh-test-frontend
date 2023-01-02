@@ -8,7 +8,7 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myApp';
+  title = 'ricohTest';
   constructor(
     private userService: UserService,
     private router: Router,

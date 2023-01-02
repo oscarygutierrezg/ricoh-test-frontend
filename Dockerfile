@@ -1,3 +1,3 @@
 FROM nginx:alpine
-COPY /dist/bcp-test /usr/share/nginx/html
+COPY /dist/ricoh-test /usr/share/nginx/html
 EXPOSE 80

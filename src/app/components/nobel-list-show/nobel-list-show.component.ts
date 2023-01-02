@@ -25,7 +25,7 @@ export class NobelListShowComponent implements OnInit{
 
 
   logout(){
-    this.router.navigate(['/nobeles']);
+    history.back();
   }
 }
 

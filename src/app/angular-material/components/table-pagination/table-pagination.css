@@ -1,0 +1,44 @@
+table {
+  width: 100%;
+}
+
+.custom-img-width{
+  width: 20px;
+}
+
+.custom-img-width1{
+  width: 35px;
+}
+
+
+.span-icon {
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.span-icon-disabled {
+  border-style: none;
+  background-color: transparent;
+  cursor: auto;
+  opacity: 0.5;
+
+}
+
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+a{
+  cursor: pointer;
+}
+
+
+
+.btn-float-right{
+  float: right;
+}
+
+

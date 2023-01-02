@@ -1,0 +1,17 @@
+
+
+  .content {
+    width: 24em;
+    height: 31em;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    z-index: 1;
+  }
+  
+  .container {
+    display: flex; 
+    align-items:center; 
+    justify-content: center;
+    height: 100%
+  }

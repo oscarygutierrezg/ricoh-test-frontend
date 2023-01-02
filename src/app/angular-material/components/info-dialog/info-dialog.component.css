@@ -1,0 +1,19 @@
+
+#mat-dialog-actions {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.cdk-focused{
+    border-color: black !important;
+}
+
+.cdk-mouse-focused{
+    border-color: black !important;
+}
+
+h2{
+    font-weight: bold;
+}

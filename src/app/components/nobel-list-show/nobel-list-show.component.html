@@ -1,0 +1,17 @@
+<div class="basic-container">
+  <app-nobel-image></app-nobel-image> 
+    <div class="flex-sheet">
+      <div class="catalog-item" *ngFor="let l of nobel?.laureates"  >
+        <app-nobel-details  [laureate]="l">loading</app-nobel-details>
+      </div>
+      
+    </div>
+    <div style="display: flex;
+    justify-content: center;">
+      <button type="button" class="btn-principal  btn btn-lg  btn-principal-sencodary" (click)="logout()">Volver
+      </button>
+    </div>
+    
+
+
+</div>

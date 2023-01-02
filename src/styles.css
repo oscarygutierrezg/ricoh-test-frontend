@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.flex-div{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px
+}
+
+
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+  background-color: #f8fbf9 !important;
+}
+
+
+::-webkit-input-placeholder { /* Edge */
+    color: rgba(0, 42, 141, 50%);
+  }
+  
+  
+  :-ms-input-placeholder { /* Internet Explorer */
+    color: rgba(0, 42, 141, 50%);
+  }
+  
+  ::placeholder {
+    color: rgba(0, 42, 141, 50%);
+  }
+
+
+
+.label-principal{
+  color: #7032be;
+    font-weight: bold;
+}
+
+
+.color-principal{
+  color: #7032be;
+}
+
+
+.btn-principal{
+    color: #fff;
+    background-color: #7032be;
+    border-color: #7032be;
+}
+
+.btn-principal-sencodary{
+  color: #7032be;
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+

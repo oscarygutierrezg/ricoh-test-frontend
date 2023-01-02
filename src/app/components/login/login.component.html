@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="content ">
+    <div class="flex-div ">
+      <h1 style="    color: #7032be;
+      font-weight: 600;margin-top: 70px">Inicio Sesión</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()"  [formGroup]="loginForm">
+      <div class="form-group">
+
+
+        <div class="input-group">
+          <div class="input-group-append">
+            <span class="input-group-text custom-span material-icons">
+              email
+            </span>
+          </div>
+
+          <input type="email" formControlName="username" class="form-control" 
+
+            [ngClass]="{ 'is-invalid': f.username.invalid && (f.username.dirty || f.username.touched) }"
+            placeholder="Usuario" />
+        </div>
+        <div *ngIf="f.username?.invalid && (f.username.dirty || f.username.touched)" class="alert alert-danger">
+          <div *ngIf="f.username?.errors?.required">
+            Usuario es requerido.
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+
+
+        <div class="input-group">
+          <div class="input-group-append">
+            <span class="input-group-text custom-span material-icons">
+              lock
+            </span>
+          </div>
+
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': f.password.invalid && (f.password.dirty || f.password.touched)}"
+            placeholder="Contraseña" />
+        </div>
+        <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)" class="alert alert-danger">
+          <div *ngIf="f.password.errors?.required">
+            Contraseña es requerida.
+          </div>
+        </div>
+
+
+      </div>
+      <div class="form-group div-footer">
+        <button type="submit"  [disabled]="!loginForm.valid" class="btn-principal  btn btn-lg btn-block primary-button">Login
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="shape"></div>
+</div>

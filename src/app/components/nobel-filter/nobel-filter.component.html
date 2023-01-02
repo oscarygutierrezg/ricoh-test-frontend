@@ -1,0 +1,72 @@
+<div class="basic-container" style="margin-bottom: 20px;">
+
+
+  <label class="label-principal">Buscador datos Premio Nobel</label>
+  <form (ngSubmit)="onSubmit()"  [formGroup]="filterForm">
+    <div style="display:flex">
+      <div class="child">
+        <mat-form-field appearance="fill">
+          <mat-label>Categorias</mat-label>
+          <mat-select [(value)]="selectedCategory" [formControl]="category">
+            <mat-option *ngFor="let symbol of keys(categories)" [value]="symbol">
+              {{getName(symbol)}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div *ngIf="f.category?.invalid && (f.category.dirty || f.category.touched)" class="alert alert-danger">
+          <div *ngIf="f.category?.errors?.required">
+            El campo es requerido.
+          </div>
+        </div>
+      </div>
+      <div class="child">
+        <mat-form-field appearance="fill">
+          <mat-label>Año desde</mat-label>
+          <input matInput [matDatepicker]="dpFrom" [formControl]="dateFrom" 
+          [max]="currentYear"
+          (keydown.Backspace)="$event.preventDefault()">
+          <mat-datepicker-toggle matIconSuffix [for]="dpFrom"></mat-datepicker-toggle>
+          <mat-datepicker #dpFrom startView="multi-year" (yearSelected)="chosenYearFromHandler($event, dpFrom)"
+            panelClass="example-month-picker">
+          </mat-datepicker>
+        </mat-form-field>
+        <div *ngIf="f.dateFrom?.invalid && (f.dateFrom.dirty || f.dateFrom.touched)" class="alert alert-danger">
+          <div *ngIf="f.dateFrom?.errors?.required">
+            El campo es requerido.
+          </div>
+          <div *ngIf="f.dateFrom?.hasError('invalidFromMajor')">
+            Año desde {{f.dateFrom.value.year()}} no puede ser mayor que Año hasta {{f.dateTo.value.year()}} 
+          </div>
+          <div *ngIf="f.dateFrom?.hasError('invalidRange')">
+            El rango de años no puede ser superior a 15
+          </div>
+        </div>
+      </div>
+      <div class="child">
+        <mat-form-field appearance="fill">
+          <mat-label>Año hasta</mat-label>
+          <input matInput [matDatepicker]="dpTo" [formControl]="dateTo" 
+          [max]="currentYear"
+          (keydown.Backspace)="$event.preventDefault()">
+          <mat-datepicker-toggle matIconSuffix [for]="dpTo"></mat-datepicker-toggle>
+          <mat-datepicker #dpTo startView="multi-year" (yearSelected)="chosenYearToHandler($event, dpTo)"
+            panelClass="example-month-picker">
+          </mat-datepicker>
+        </mat-form-field>
+        <div *ngIf="f.dateTo?.invalid && (f.dateTo.dirty || f.dateTo.touched)" class="alert alert-danger">
+          <div *ngIf="f.dateTo?.errors?.required">
+            El campo es requerido.
+          </div>
+          <div *ngIf="f.dateTo?.hasError('invalidRange')">
+            El rango de años no puepd ser superior a 15
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex;
+    justify-content: center;">
+      <button  type="submit"  [disabled]="!filterForm.valid" class="btn-principal  btn btn-lg  btn-principal" >Buscar
+      </button>
+    </div>
+  </form>
+</div>

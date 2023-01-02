@@ -1,0 +1,29 @@
+<div class="mat-elevation-z8">
+
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="anio">
+      <th class="label-principal" mat-header-cell *matHeaderCellDef> Año </th>
+      <td  mat-cell *matCellDef="let element"> {{element.awardYear}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="laureate">
+      <th class="label-principal" mat-header-cell *matHeaderCellDef> Galardonado/s </th>
+      <td  mat-cell *matCellDef="let element"> {{element.laureates | laureateNames}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th style="text-align: center;" class="label-principal" mat-header-cell *matHeaderCellDef> Acciones</th>
+      <td  mat-cell *matCellDef="let element">
+        <div class="btn-toolbar" role="toolbar" style="justify-content: space-evenly;">
+          <div class="btn-group" role="group">
+            <button (click)="show(element.index)" matTooltip="Ver Detalle" mat-mini-fab color="accent">
+              <mat-icon>remove_red_eye</mat-icon>
+            </button>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+    <tr class="color-principal" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr class="color-principal" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
